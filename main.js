@@ -35,7 +35,30 @@ let cafe = 2;
 let monto;
 let monto1;
 
-    // Se presena el MENU con un "do" y queda en "loop" con el "while" hasta que el usuario selecciona SALIR
+                            /* =================    FUNCION  ================= */
+
+function montoMenorBebida(pago, precioBebida) {
+    while((pago !== 1) && (pago !== 2) && (pago !== 5) && (pago !== 10)) {
+        alert("El pago debe utilizar billetes de correcta denominacion");
+        pago = parseInt(prompt("Ingrese nuevamente su pago"));
+    }
+
+    while(pago < precioBebida) {
+        alert("El pago ingresado es menor al valor del producto");
+        pago = parseInt(prompt("Ha seleccionado Mate, el precio es de " + precioBebida + " pesos. Que monto ingresara?"));
+        continue;
+    }
+
+    if(pago == precioBebida) {
+        alert("Gracias por su compra, aqui tiene su bebida");
+    }
+
+    else if (pago > precioBebida) {
+        alert("Ha pagado " + pago + " pesos. Aqui tiene su vuelto de " + (pago - precioBebida) + " pesos, retire su bebida");
+    }
+    }
+
+     // Se presena el MENU con un "do" y queda en "loop" con el "while" hasta que el usuario selecciona SALIR
 
     do {
         let opcion = Number(prompt("MENU\nIngresá 1 para mate\nIngresá 2 para cafe \nIngresá 3 para salir"))
@@ -66,27 +89,3 @@ let monto1;
     }
     while (continuar);
 
-
-                        /* =================    FUNCION  ================= */
-
-
-    function montoMenorBebida(pago, precioBebida) {
-        while((pago !== 1) && (pago !== 2) && (pago !== 5) && (pago !== 10)) {
-            alert("El pago debe utilizar billetes de correcta denominacion");
-            pago = parseInt(prompt("Ingrese nuevamente su pago"));
-        }
-
-        while(pago < precioBebida) {
-            alert("El pago ingresado es menor al valor del producto");
-            pago = parseInt(prompt("Ha seleccionado Mate, el precio es de " + precioBebida + " pesos. Que monto ingresara?"));
-            continue;
-            }
-
-        if(pago == precioBebida) {
-        alert("Gracias por su compra, aqui tiene su bebida");
-        }
-
-        else if (pago > precioBebida) {
-            alert("Ha pagado " + pago + " pesos. Aqui tiene su vuelto de " + (pago - precioBebida) + " pesos, retire su bebida");
-            }
-        }
